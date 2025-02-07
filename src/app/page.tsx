@@ -6,6 +6,7 @@ import { Facebook, Twitter, Instagram, Youtube, BookOpen, Newspaper, Users, Mail
 import { Home as HomeIcon } from 'lucide-react';
 import Link from 'next/link';
 import "./page.scss";
+import ThemeSwitcher from "@/components/ThemeSwitcher";
 
 const sections = [
     { id: 'home', title: 'Početna', icon: HomeIcon },
@@ -37,8 +38,12 @@ const blogPosts = [
 
 export default function Home() {
     const [activeSection, setActiveSection] = useState('home');
-    const [isNavOpen, setIsNavOpen] = useState(true);
+    const [isNavOpen] = useState(true);
+    const [theme, setTheme] = useState('dark');
 
+    const handleThemeChange = (newTheme: string) => {
+        setTheme(newTheme);
+    };
 
     useEffect(() => {
         const handleScroll = () => {
@@ -60,6 +65,7 @@ export default function Home() {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
     const scrollToSection = (id: string) => {
         const element = document.getElementById(id);
         if (element) {
@@ -91,9 +97,10 @@ export default function Home() {
                 <div className="sidebar-content">
                     <div className="sidebar-header">
                         <h1 className="site-title">EduCenter</h1>
+                        <ThemeSwitcher onThemeChange={handleThemeChange} />
                     </div>
 
-                    <nav className="navigation">
+                    <nav className={`navigation ${theme}`}>
                         {sections.map(({ id, title, icon: Icon }) => (
                             <Link
                                 key={id}
@@ -122,7 +129,7 @@ export default function Home() {
                 </div>
             </motion.aside>
 
-            <main className="main-content">
+            <main className={`main-content ${theme}`}>
                 <AnimatePresence mode="popLayout">
                     <section key="home" id="home" className="section">
                         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
@@ -136,7 +143,7 @@ export default function Home() {
                             <h2 className="section-title">Naše Usluge</h2>
                             <div className="services-grid">
                                 {services.map((service, index) => (
-                                    <div key={index} className="service-card">
+                                    <div key={index} className={`service-card ${theme}`}>
                                         <h3>{service.name}</h3>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                     </div>
@@ -148,9 +155,9 @@ export default function Home() {
                     <section key="blog" id="blog" className="section">
                         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
                             <h2 className="section-title">Blog</h2>
-                            <div className="blog-grid">
+                            <div className={`blog-grid ${theme}`}>
                                 {blogPosts.map((post, index) => (
-                                    <div key={index} className="blog-card">
+                                    <div key={index} className={`blog-card ${theme}`}>
                                         <h3>{post.title}</h3>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                     </div>
@@ -169,11 +176,11 @@ export default function Home() {
                     <section key="contact" id="contact" className="section">
                         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
                             <h2 className="section-title">Kontakt</h2>
-                            <form className="contact-form">
-                                <input type="text" placeholder="Vaše ime" className="form-input" />
-                                <input type="email" placeholder="Email adresa" className="form-input" />
-                                <textarea placeholder="Vaša poruka" rows={4} className="form-textarea"></textarea>
-                                <button type="submit" className="form-button">Pošalji poruku</button>
+                            <form className={`contact-form ${theme}`}>
+                                <input type="text" placeholder="Vaše ime" className={`form-input ${theme}`} />
+                                <input type="email" placeholder="Email adresa" className={`form-input ${theme}`} />
+                                <textarea placeholder="Vaša poruka" rows={4} className={`form-textarea ${theme}`}></textarea>
+                                <button type="submit" className={`form-button ${theme}`}>Pošalji poruku</button>
                             </form>
                         </motion.div>
                     </section>

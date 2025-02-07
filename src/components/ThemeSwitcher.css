@@ -1,0 +1,14 @@
+.theme-button {
+    padding: 0.75rem 1.5rem;
+    background: var(--highlight-color);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.theme-button:hover {
+    background: #896FBC;
+    transform: scale(1.05);
+}
