@@ -1,0 +1,13 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: var(--background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center; /* Ensure text is centered */
+  z-index: 100;
+}

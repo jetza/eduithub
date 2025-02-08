@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import './ThemeSwitcher.css';
+import Switch from "@/components/Switch/Switch";
 
 interface ThemeSwitcherProps {
     onThemeChange: (newTheme: string) => void;
@@ -25,9 +26,7 @@ const ThemeSwitcher = ({ onThemeChange }: ThemeSwitcherProps) => {
     };
 
     return (
-        <button className="theme-button" onClick={toggleTheme}>
-            {theme === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode'}
-        </button>
+        <Switch isOn={theme === 'light'} handleToggle={toggleTheme} />
     );
 };
 

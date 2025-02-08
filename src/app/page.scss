@@ -226,3 +226,25 @@
     transform: translateX(0);
   }
 }
+
+.transparent-bar {
+  position: fixed;
+  left: 256px;
+  right: 0;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  z-index: 100;
+}
+
+.transparent-bar.top {
+  justify-content: flex-end;
+  top: 0;
+}
+
+.transparent-bar.bottom {
+  background: var(--background);
+  justify-content: center;
+  bottom: 0;
+}

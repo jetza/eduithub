@@ -6,6 +6,7 @@ import "./page.scss";
 import ThemeSwitcher from "@/components/ThemeSwitcher/ThemeSwitcher";
 import Navigation from "@/components/Navigation/Navigation";
 import { socialLinks, services, blogPosts } from './data';
+import Footer from "@/components/Footer/Footer";
 
 export default function Home() {
     const [activeSection, setActiveSection] = useState('home');
@@ -18,11 +19,13 @@ export default function Home() {
 
     return (
         <div className="layout-container">
+            <div className="transparent-bar top">
+                <ThemeSwitcher onThemeChange={handleThemeChange} />
+            </div>
             <motion.aside initial={{ x: -300 }} animate={{ x: isNavOpen ? 0 : -300 }} className="sidebar">
                 <div className="sidebar-content">
                     <div className="sidebar-header">
                         <h1 className="site-title">EduCenter</h1>
-                        <ThemeSwitcher onThemeChange={handleThemeChange} />
                     </div>
 
                     <Navigation theme={theme} activeSection={activeSection} setActiveSection={setActiveSection} />
@@ -95,6 +98,9 @@ export default function Home() {
                         </motion.div>
                     </section>
                 </AnimatePresence>
+                <div className="transparent-bar bottom">
+                    <Footer/>
+                </div>
             </main>
         </div>
     );
