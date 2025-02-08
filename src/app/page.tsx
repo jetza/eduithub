@@ -7,6 +7,7 @@ import ThemeSwitcher from "@/components/ThemeSwitcher/ThemeSwitcher";
 import Navigation from "@/components/Navigation/Navigation";
 import { socialLinks, services, blogPosts } from './data';
 import Footer from "@/components/Footer/Footer";
+import ContactForm from "@/components/ContactForm/ContactForm";
 
 export default function Home() {
     const [activeSection, setActiveSection] = useState('home');
@@ -25,7 +26,11 @@ export default function Home() {
             <motion.aside initial={{ x: -300 }} animate={{ x: isNavOpen ? 0 : -300 }} className="sidebar">
                 <div className="sidebar-content">
                     <div className="sidebar-header">
-                        <h1 className="site-title">EduCenter</h1>
+                        {theme === 'dark' ? (
+                            <img src="/light-logo.png" alt="Logo" width={180} />
+                        ) : (
+                            <img src="/dark-logo.png" alt="Logo" width={180} />
+                        )}
                     </div>
 
                     <Navigation theme={theme} activeSection={activeSection} setActiveSection={setActiveSection} />
@@ -46,7 +51,7 @@ export default function Home() {
                 <AnimatePresence mode="popLayout">
                     <section key="home" id="home" className="section">
                         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-                            <h1 className="section-title">Dobrodošli u EduCenter</h1>
+                            <h1 className="section-title">Dobrodošli u EduITHub</h1>
                             <p className="section-description">Vaš put ka izvrsnosti počinje ovde.</p>
                         </motion.div>
                     </section>
@@ -89,12 +94,7 @@ export default function Home() {
                     <section key="contact" id="contact" className="section">
                         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
                             <h2 className="section-title">Kontakt</h2>
-                            <form className={`contact-form ${theme}`}>
-                                <input type="text" placeholder="Vaše ime" className={`form-input ${theme}`} />
-                                <input type="email" placeholder="Email adresa" className={`form-input ${theme}`} />
-                                <textarea placeholder="Vaša poruka" rows={4} className={`form-textarea ${theme}`}></textarea>
-                                <button type="submit" className={`form-button ${theme}`}>Pošalji poruku</button>
-                            </form>
+                            <ContactForm theme={theme} />
                         </motion.div>
                     </section>
                 </AnimatePresence>
