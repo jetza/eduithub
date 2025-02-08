@@ -162,16 +162,6 @@
   background: #896FBC;
 }
 
-.navigation.light {
-  background-color: #f0f0f0;
-  color: #333333;
-}
-
-.navigation.dark {
-  background-color: #1a1a1a;
-  color: #f0f0f0;
-}
-
 .sidebar {
   position: fixed;
   left: 0;
@@ -196,33 +186,6 @@
   font-weight: bold;
   color: var(--highlight-color);
   text-align: center;
-}
-
-.navigation {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.nav-link {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 1rem;
-  color: var(--text-color);
-  text-decoration: none;
-  font-weight: 500;
-  transition: background 0.3s, color 0.3s;
-}
-
-.nav-link:hover {
-  background: #f5ebff;
-}
-
-.nav-link.active {
-  background: var(--text-color);
-  font-weight: bold;
 }
 
 .sidebar-footer {

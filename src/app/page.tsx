@@ -1,40 +1,11 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Facebook, Twitter, Instagram, Youtube, BookOpen, Newspaper, Users, Mail } from 'lucide-react';
-import { Home as HomeIcon } from 'lucide-react';
-import Link from 'next/link';
 import "./page.scss";
-import ThemeSwitcher from "@/components/ThemeSwitcher";
-
-const sections = [
-    { id: 'home', title: 'Početna', icon: HomeIcon },
-    { id: 'services', title: 'Usluge', icon: BookOpen },
-    { id: 'blog', title: 'Blog', icon: Newspaper },
-    { id: 'about', title: 'O nama', icon: Users },
-    { id: 'contact', title: 'Kontakt', icon: Mail },
-];
-
-const socialLinks = [
-    { icon: Facebook, href: '#', label: 'Facebook' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Instagram, href: '#', label: 'Instagram' },
-    { icon: Youtube, href: '#', label: 'Youtube' },
-];
-
-const services = [
-    { id: 1, name: "Online kursevi" },
-    { id: 2, name: "Mentorstvo" },
-    { id: 3, name: "Radionice" },
-    { id: 4, name: "Sertifikacija" },
-];
-
-const blogPosts = [
-    { id: 1, title: "Blog Naslov 1" },
-    { id: 2, title: "Blog Naslov 2" },
-    { id: 3, title: "Blog Naslov 3" },
-];
+import ThemeSwitcher from "@/components/ThemeSwitcher/ThemeSwitcher";
+import Navigation from "@/components/Navigation/Navigation";
+import { socialLinks, services, blogPosts } from './data';
 
 export default function Home() {
     const [activeSection, setActiveSection] = useState('home');
@@ -43,52 +14,6 @@ export default function Home() {
 
     const handleThemeChange = (newTheme: string) => {
         setTheme(newTheme);
-    };
-
-    useEffect(() => {
-        const handleScroll = () => {
-            const scrollPosition = window.scrollY;
-            sections.forEach(({ id }) => {
-                const element = document.getElementById(id);
-                if (element) {
-                    const { offsetTop, offsetHeight } = element;
-                    if (
-                        scrollPosition >= offsetTop - 100 &&
-                        scrollPosition < offsetTop + offsetHeight - 100
-                    ) {
-                        setActiveSection(id);
-                    }
-                }
-            });
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
-    const scrollToSection = (id: string) => {
-        const element = document.getElementById(id);
-        if (element) {
-            const targetPosition = element.offsetTop;
-            const startPosition = window.scrollY;
-            const distance = targetPosition - startPosition;
-            const duration = 700; // Adjust this value for slower or faster scrolling
-            let start: number | null = null;
-
-            const step = (timestamp: number) => {
-                if (!start) start = timestamp;
-                const progress = timestamp - start;
-                const scrollPosition = startPosition + (distance * (progress / duration));
-                window.scrollTo(0, scrollPosition);
-                if (progress < duration) {
-                    requestAnimationFrame(step);
-                } else {
-                    window.scrollTo(0, targetPosition);
-                }
-            };
-
-            requestAnimationFrame(step);
-        }
     };
 
     return (
@@ -100,22 +25,7 @@ export default function Home() {
                         <ThemeSwitcher onThemeChange={handleThemeChange} />
                     </div>
 
-                    <nav className={`navigation ${theme}`}>
-                        {sections.map(({ id, title, icon: Icon }) => (
-                            <Link
-                                key={id}
-                                href={`#${id}`}
-                                className={`nav-link ${activeSection === id ? 'active' : ''}`}
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    scrollToSection(id);
-                                }}
-                            >
-                                <Icon size={20} />
-                                {title}
-                            </Link>
-                        ))}
-                    </nav>
+                    <Navigation theme={theme} activeSection={activeSection} setActiveSection={setActiveSection} />
 
                     <div className="sidebar-footer">
                         <div className="social-links">
