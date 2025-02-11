@@ -3,13 +3,14 @@ import {JSX} from "react";
 
 interface CardProps {
     theme: string;
+    name: string;
 }
 
-const Card: (props: CardProps) => JSX.Element = ({ theme }) => {
+const Card: (props: CardProps) => JSX.Element = ({ theme, name }) => {
     return (
-        <div className={`navigation-container ${theme}`}>
+        <div className={`navigation-container ${theme}`} data-theme={theme}>
             <div className="holographic-card">
-                <h2>HOLOGRAM</h2>
+                <h2>{name}</h2>
             </div>
         </div>
     );

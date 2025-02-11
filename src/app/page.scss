@@ -1,4 +1,14 @@
-/* src/styles/page.scss */
+:root {
+  --background: var(--background-light);
+}
+
+.dark {
+  --background: var(--background-dark);
+}
+
+.light {
+  --background: var(--background-light);
+}
 
 .layout-container {
   display: flex;
@@ -245,10 +255,4 @@
 .transparent-bar.top {
   justify-content: flex-end;
   top: 0;
-}
-
-.transparent-bar.bottom {
-  background: var(--background);
-  justify-content: center;
-  bottom: 0;
 }

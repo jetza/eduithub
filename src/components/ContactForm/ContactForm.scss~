@@ -60,5 +60,5 @@
 }
 
 .form-button.dark:hover {
-  background: var(--text-color);
+  background: var(--highlight-color);
 }

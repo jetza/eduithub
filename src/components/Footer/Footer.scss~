@@ -1,11 +1,8 @@
 .footer-bar {
-  position: fixed;
   height: 50px;
   display: flex;
   align-items: center;
-  background: var(--background);
   justify-content: center;
-  bottom: 0;
+  background: var(--background);
   width: 100%;
-  transition: background-color 0.3s ease;
 }

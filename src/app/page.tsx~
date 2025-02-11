@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import {useEffect, useState} from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import "./page.scss";
 import ThemeSwitcher from "@/components/ThemeSwitcher/ThemeSwitcher";
@@ -14,7 +14,16 @@ import Card from "@/components/Card/Card";
 export default function Home() {
     const [activeSection, setActiveSection] = useState('home');
     const [isNavOpen] = useState(true);
-    const [theme, setTheme] = useState('dark');
+    const [theme, setTheme] = useState<string | null>(null); // Početno null, da sprečimo flash efekat
+
+    useEffect(() => {
+        const savedTheme = localStorage.getItem('theme') || 'dark'; // Default je dark ako nema u memoriji
+        setTheme(savedTheme);
+    }, []);
+
+    if (theme === null) {
+        return null; // Čeka dok se ne učita prava tema
+    }
 
     const handleThemeChange = (newTheme: string) => {
         setTheme(newTheme);
@@ -29,9 +38,9 @@ export default function Home() {
                 <div className="sidebar-content">
                     <div className="sidebar-header">
                         {theme === 'dark' ? (
-                            <Image src="/lrn-dark.png" alt="Logo" width={80} height={80} />
+                            <Image src="/logo-dark.png" alt="Logo" width={80} height={80} />
                         ) : (
-                            <Image src="/lrn-light.png" alt="Logo" width={80} height={80} />
+                            <Image src="/logo-light.png" alt="Logo" width={80} height={80} />
                         )}
                     </div>
 
@@ -50,7 +59,6 @@ export default function Home() {
             </motion.aside>
 
             <main className={`main-content ${theme}`}>
-                <Card theme={theme} />
                 <AnimatePresence mode="popLayout">
                     <section key="home" id="home" className="section">
                         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
@@ -64,10 +72,7 @@ export default function Home() {
                             <h2 className="section-title">Naše Usluge</h2>
                             <div className="services-grid">
                                 {services.map((service, index) => (
-                                    <div key={index} className={`service-card ${theme}`}>
-                                        <h3>{service.name}</h3>
-                                        <p>{service.text}</p>
-                                    </div>
+                                    <Card theme={theme} name={service.name} text={service.text} key={index} />
                                 ))}
                             </div>
                         </motion.div>
@@ -100,12 +105,10 @@ export default function Home() {
                             <ContactForm theme={theme} />
                         </motion.div>
                     </section>
-                </AnimatePresence>
 
-                <div className="transparent-bar bottom">
-                    <Footer/>
-                </div>
+                </AnimatePresence>
             </main>
+            <Footer theme={theme} />
         </div>
     );
 }

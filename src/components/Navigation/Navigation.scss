@@ -1,9 +1,10 @@
-.navigation-container {
-    padding-left: 6rem;
-}
+//.navigation-container {
+//    padding-left: 6rem;
+//}
 .navigation {
   display: flex;
   flex-direction: column;
+  align-items: center; /* Center the buttons */
   position: relative;
   gap: 35px;
 }
@@ -50,7 +51,6 @@
 
 .navigation li:hover {
   width: 180px;
-  margin-left: -60px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0);
 }
 

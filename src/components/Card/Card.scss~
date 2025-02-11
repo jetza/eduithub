@@ -62,7 +62,7 @@
 }
 
 [data-theme='light'] .holographic-card h2 {
-  color: var(--highlight-color);
+  color: var(--foreground-light);
 }
 
 [data-theme='light'] .holographic-card:hover {
