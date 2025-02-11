@@ -13,7 +13,7 @@ import {
 export const sections = [
     { id: 'home', title: 'Početna', icon: FaHome },
     { id: 'services', title: 'Usluge', icon: FaBookOpen },
-    { id: 'blog', title: 'Blog', icon: FaNewspaper },
+    { id: 'blog', title: 'Novosti', icon: FaNewspaper },
     { id: 'about', title: 'O nama', icon: FaUsers },
     { id: 'contact', title: 'Kontakt', icon: FaEnvelope },
 ];

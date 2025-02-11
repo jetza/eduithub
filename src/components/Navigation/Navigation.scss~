@@ -63,7 +63,7 @@
 }
 
 .navigation li .icon {
-  color: var(--background-light);
+  color: var(--background-dark);
   top: 50%;
   font-size: 1.75em;
   transition: 0.5s;
@@ -81,7 +81,7 @@
 }
 
 .navigation li .title {
-  color: var(--background-light);
+  color: #fff;
   //font-size: 1.1em;
   //letter-spacing: 0.1em;
   text-transform: uppercase;

@@ -9,6 +9,7 @@ import Footer from "@/components/Footer/Footer";
 import ContactForm from "@/components/ContactForm/ContactForm";
 import Navigation from "@/components/Navigation/Navigation";
 import Image from "next/image";
+import Card from "@/components/Card/Card";
 
 export default function Home() {
     const [activeSection, setActiveSection] = useState('home');
@@ -28,9 +29,9 @@ export default function Home() {
                 <div className="sidebar-content">
                     <div className="sidebar-header">
                         {theme === 'dark' ? (
-                            <Image src="/lrn-dark.png" alt="Logo" width={100} />
+                            <Image src="/lrn-dark.png" alt="Logo" width={80} height={80} />
                         ) : (
-                            <Image src="/lrn-light.png" alt="Logo" width={100} />
+                            <Image src="/lrn-light.png" alt="Logo" width={80} height={80} />
                         )}
                     </div>
 
@@ -49,6 +50,7 @@ export default function Home() {
             </motion.aside>
 
             <main className={`main-content ${theme}`}>
+                <Card theme={theme} />
                 <AnimatePresence mode="popLayout">
                     <section key="home" id="home" className="section">
                         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
@@ -64,7 +66,7 @@ export default function Home() {
                                 {services.map((service, index) => (
                                     <div key={index} className={`service-card ${theme}`}>
                                         <h3>{service.name}</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                        <p>{service.text}</p>
                                     </div>
                                 ))}
                             </div>
@@ -73,7 +75,7 @@ export default function Home() {
 
                     <section key="blog" id="blog" className="section">
                         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
-                            <h2 className="section-title">Blog</h2>
+                            <h2 className="section-title">Novosti</h2>
                             <div className={`blog-grid ${theme}`}>
                                 {blogPosts.map((post, index) => (
                                     <div key={index} className={`blog-card ${theme}`}>
@@ -99,6 +101,7 @@ export default function Home() {
                         </motion.div>
                     </section>
                 </AnimatePresence>
+
                 <div className="transparent-bar bottom">
                     <Footer/>
                 </div>
