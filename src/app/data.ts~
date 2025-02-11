@@ -1,14 +1,4 @@
-import {
-    FaFacebook,
-    FaInstagram,
-    FaYoutube,
-    FaHome,
-    FaBookOpen,
-    FaNewspaper,
-    FaUsers,
-    FaEnvelope,
-    FaTiktok
-} from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaInstagram, FaYoutube, FaHome, FaBookOpen, FaNewspaper, FaUsers, FaEnvelope } from 'react-icons/fa';
 
 export const sections = [
     { id: 'home', title: 'Početna', icon: FaHome },

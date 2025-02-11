@@ -1,6 +1,6 @@
 import { useEffect, JSX } from 'react';
 import { sections } from '@/app/data';
-import './Navigation.scss';
+import './Navigation2.scss';
 
 interface NavigationProps {
     theme: string;
@@ -8,7 +8,7 @@ interface NavigationProps {
     setActiveSection: (id: string) => void;
 }
 
-const Navigation: (props: NavigationProps) => JSX.Element = ({ theme, activeSection, setActiveSection }) => {
+const Navigation2: (props: NavigationProps) => JSX.Element = ({ theme, activeSection, setActiveSection }) => {
     const scrollToSection = (id: string) => {
         const element = document.getElementById(id);
         if (element) {
@@ -56,25 +56,27 @@ const Navigation: (props: NavigationProps) => JSX.Element = ({ theme, activeSect
     }, [setActiveSection]);
 
     return (
-        <div className={`navigation-container ${theme}`}>
-            <ul className="navigation">
-                {sections.map(({ id, title, icon: Icon }) => (
-                    <li
-                        key={id}
-                        className={`nav-link ${activeSection === id ? 'active' : ''}`}
-                        onClick={(e) => {
-                            e.preventDefault();
-                            scrollToSection(id);
-                        }}
-                        style={{ '--i': 'var(--highlight-color)', '--j': 'var(--text-color)' } as React.CSSProperties}
-                    >
-                        <span className="icon"><Icon size={20} /></span>
-                        <span className="title">{title}</span>
-                    </li>
-                ))}
-            </ul>
+        <div className="navigation-container">
+
+
+        <ul className="navigation">
+            {sections.map(({ id, title, icon: Icon }) => (
+                <li
+                    key={id}
+                    className={`nav-link ${activeSection === id ? 'active' : ''}`}
+                    onClick={(e) => {
+                        e.preventDefault();
+                        scrollToSection(id);
+                    }}
+                    style={{ '--i': 'var(--highlight-color)', '--j': 'var(--highlight-color)' } as React.CSSProperties}
+                >
+                    <span className="icon"><Icon size={20} /></span>
+                    <span className="title">{title}</span>
+                </li>
+            ))}
+        </ul>
         </div>
     );
 };
 
-export default Navigation;
+export default Navigation2;

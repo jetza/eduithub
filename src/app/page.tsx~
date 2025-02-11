@@ -28,9 +28,9 @@ export default function Home() {
                 <div className="sidebar-content">
                     <div className="sidebar-header">
                         {theme === 'dark' ? (
-                            <Image src="/lrn-dark.png" alt="Logo" width={100} height={100} />
+                            <Image src="/lrn-dark.png" alt="Logo" width={100} />
                         ) : (
-                            <Image src="/lrn-light.png" alt="Logo" width={100} height={100} />
+                            <Image src="/lrn-light.png" alt="Logo" width={100} />
                         )}
                     </div>
 
