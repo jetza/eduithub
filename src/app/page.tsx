@@ -14,15 +14,15 @@ import Card from "@/components/Card/Card";
 export default function Home() {
     const [activeSection, setActiveSection] = useState('home');
     const [isNavOpen] = useState(true);
-    const [theme, setTheme] = useState<string | null>(null); // Početno null, da sprečimo flash efekat
+    const [theme, setTheme] = useState<string | null>(null);
 
     useEffect(() => {
-        const savedTheme = localStorage.getItem('theme') || 'dark'; // Default je dark ako nema u memoriji
+        const savedTheme = localStorage.getItem('theme') || 'dark';
         setTheme(savedTheme);
     }, []);
 
     if (theme === null) {
-        return null; // Čeka dok se ne učita prava tema
+        return null;
     }
 
     const handleThemeChange = (newTheme: string) => {
@@ -72,7 +72,7 @@ export default function Home() {
                             <h2 className="section-title">Naše Usluge</h2>
                             <div className="services-grid">
                                 {services.map((service, index) => (
-                                    <Card theme={theme} name={service.name} text={service.text} key={index} />
+                                    <Card theme={theme} name={service.name} key={index} />
                                 ))}
                             </div>
                         </motion.div>

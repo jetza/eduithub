@@ -1,4 +1,4 @@
-import { useEffect, JSX } from 'react';
+import React, { useEffect, JSX } from 'react';
 import { sections } from '@/app/data';
 import './Navigation.scss';
 

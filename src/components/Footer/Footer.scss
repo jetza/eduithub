@@ -8,4 +8,13 @@
   bottom: 0;
   width: 100%;
   transition: background-color 0.3s ease;
+  .contact-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
 }
