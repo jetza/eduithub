@@ -1,7 +1,7 @@
 import {
     FaFacebook,
     FaInstagram,
-    FaLinkedin,
+    FaYoutube,
     FaHome,
     FaBookOpen,
     FaNewspaper,
@@ -13,7 +13,7 @@ import {
 export const sections = [
     { id: 'home', title: 'Početna', icon: FaHome },
     { id: 'services', title: 'Usluge', icon: FaBookOpen },
-    { id: 'news', title: 'Novosti', icon: FaNewspaper },
+    { id: 'blog', title: 'Novosti', icon: FaNewspaper },
     { id: 'about', title: 'O nama', icon: FaUsers },
     { id: 'contact', title: 'Kontakt', icon: FaEnvelope },
 ];
@@ -22,7 +22,7 @@ export const socialLinks = [
     { icon: FaFacebook, href: '#', label: 'Facebook' },
     { icon: FaInstagram, href: '#', label: 'Instagram' },
     { icon: FaTiktok, href: '#', label: 'Tiktok' },
-    { icon: FaLinkedin, href: '#', label: 'LinkedIn' },
+    { icon: FaYoutube, href: '#', label: 'Youtube' },
     { icon: FaViber, href: '#', label: 'Viber' },
 ];
 

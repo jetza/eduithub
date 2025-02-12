@@ -8,13 +8,20 @@
   bottom: 0;
   width: 100%;
   transition: background-color 0.3s ease;
+
   .contact-icon {
     position: absolute;
-    bottom: 10px;
-    right: 10px;
+    right: 20px;
     background: none;
     border: none;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     cursor: pointer;
+    color: var(--text-color);
+    transition: color 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+      color: var(--highlight-color);
+      transform: scale(1.2);
+    }
   }
 }

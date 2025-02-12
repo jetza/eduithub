@@ -1,14 +1,14 @@
-//:root {
-//  --background: white; // Default vrednost da ne bude crna
-//}
-//
-//.dark {
-//  --background: black;
-//}
-//
-//.light {
-//  --background: white;
-//}
+:root {
+  --background: var(--background-light);
+}
+
+.dark {
+  --background: var(--background-dark);
+}
+
+.light {
+  --background: var(--background-light);
+}
 
 .layout-container {
   display: flex;
@@ -16,8 +16,8 @@
 
 .main-content {
   flex: 1;
-  padding: 2rem;
-  margin-left: 256px; /* Adjust this value to match the sidebar width */
+  padding: 0 8rem 0 2rem;
+  margin-left: 16rem;
 }
 
 .section {
@@ -70,8 +70,6 @@
   border-color: #444;
   color: #f0f0f0;
 }
-
-/* src/styles/page.scss */
 
 .blog-grid {
   display: grid;
@@ -181,8 +179,6 @@
   top: 0;
   height: 100vh;
   width: 256px;
-  //background: var(--background);
-  //box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
   z-index: 50;
   transition: transform 0.3s ease-in-out;
 }
@@ -207,10 +203,92 @@
   margin-top: auto;
 }
 
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-120%);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(30%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .social-links {
   display: flex;
+  flex-direction: row;
+  gap: 20px;
   justify-content: center;
-  gap: 1rem;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.social-links li {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: color 0.5s;
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: slideIn 0.5s forwards;
+}
+
+.social-links li::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: linear-gradient(45deg, var(--i), var(--j));
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.social-links li::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(45deg, var(--i), var(--j));
+  transition: 0.5s;
+  filter: blur(15px);
+  z-index: -1;
+  opacity: 0;
+}
+
+.social-links li:hover .icon {
+  color: var(--highlight-color);
+  transform: scale(1.5) translateY(-15px) translateX(15px);
+}
+
+.social-links li {
+  animation: slideIn 0.5s forwards;
+}
+
+.social-links li:nth-child(1) {
+  animation-delay: 0.9s;
+}
+
+.social-links li:nth-child(2) {
+  animation-delay: 0.8s;
+}
+
+.social-links li:nth-child(3) {
+  animation-delay: 0.7s;
+}
+
+.social-links li:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+.social-links li:nth-child(5) {
+  animation-delay: 0.5s;
 }
 
 .social-icon {

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './Footer.scss';
 import ContactModal from '../ContactModal/ContactModal';
-import { FaRegCommentAlt } from 'react-icons/fa';
+import {FaCopyright, FaRegCommentAlt} from 'react-icons/fa';
 
 interface FooterProps {
     theme: string;
@@ -16,9 +16,10 @@ const Footer: React.FC<FooterProps> = ({ theme }) => {
 
     return (
         <footer className={`footer-bar ${theme}`}>
-            <p>&copy; 2025 Lrnium. All rights reserved.</p>
+            <span>
+                <FaCopyright /> 2025 Lrnium. All rights reserved.</span>
             <button className="contact-icon" onClick={toggleModal}>
-                <FaRegCommentAlt style={{ color: 'var(--text-color)' }} size={40} />
+                <FaRegCommentAlt size={40} />
             </button>
             {isModalOpen && <ContactModal onClose={toggleModal}  theme={theme}/>}
         </footer>
