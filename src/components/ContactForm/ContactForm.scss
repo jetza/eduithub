@@ -55,3 +55,65 @@
   font-size: 2rem;
   margin-bottom: 1rem;
 }
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form.light {
+  color: var(--dark-gray);
+}
+
+.contact-form.dark {
+  color: var(--grid-white);
+}
+
+.form-input,
+.form-textarea {
+  padding: 0.75rem;
+  border: 1px solid var(--blog-card-border);
+  border-radius: 0.5rem;
+}
+
+.form-input.light,
+.form-textarea.light {
+  background: var(--foreground-dark);
+  border-color: var(--border-card);
+  color: var(--dark-gray);
+}
+
+.form-input.dark,
+.form-textarea.dark {
+  background: var(--card-bacground-dark);
+  border-color: var(--border-card-dark);
+  color: var(--grid-white);
+}
+
+.form-button {
+  padding: 0.75rem 1.5rem;
+  background: var(--highlight-color);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.form-button.light {
+  background: var(--text-color);
+  color: var(--grid-white);
+}
+
+.form-button.light:hover {
+  background: var(--highlight-color);
+}
+
+.form-button.dark {
+  background: var(--highlight-color);
+  color: var(--grid-white);
+}
+
+.form-button.dark:hover {
+  background: var(--text-color);
+}

@@ -4,15 +4,15 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(var(--foreground-light), 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 2000;
 }
 
 .modal-content {
-  background: white;
+  background: var(--foreground-dark);
   padding: 2rem 0;
   border-radius: 0.5rem;
   width: 100%;
@@ -53,14 +53,14 @@
   input, textarea {
     width: 100%;
     padding: 0.75rem;
-    border: 1px solid #ddd;
+    border: 1px solid #333333;
     border-radius: 0.5rem;
   }
 
   button {
     padding: 0.75rem 1.5rem;
-    background: #5C038C;
-    color: white;
+    background: var(--highlight-color);
+    color: var(--foreground-dark);
     border: none;
     border-radius: 0.5rem;
     cursor: pointer;

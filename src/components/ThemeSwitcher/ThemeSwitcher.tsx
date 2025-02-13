@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import './ThemeSwitcher.css';
+import './ThemeSwitcher.scss';
 import Switch from "@/components/Switch/Switch";
 
 interface ThemeSwitcherProps {
