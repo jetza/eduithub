@@ -2,7 +2,10 @@
   display: flex;
   justify-content: space-between;
   gap: 2rem;
-  align-items: stretch; /* Ensure children stretch to the same height */
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+  }
 }
 
 .contact-form {

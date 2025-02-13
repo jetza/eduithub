@@ -10,6 +10,7 @@ import ContactForm from "@/components/ContactForm/ContactForm";
 import Navigation from "@/components/Navigation/Navigation";
 import Image from "next/image";
 import Card from "@/components/Card/Card";
+import NavigationTop from "@/components/NavigationTop/NavigationTop";
 
 export default function Home() {
     const [activeSection, setActiveSection] = useState('home');
@@ -31,9 +32,7 @@ export default function Home() {
 
     return (
         <div className="layout-container">
-            <div className="transparent-bar top">
-                <ThemeSwitcher onThemeChange={handleThemeChange} />
-            </div>
+            <NavigationTop handleThemeChange={handleThemeChange}/>
             <motion.aside initial={{ x: -300 }} animate={{ x: isNavOpen ? 0 : -300 }} className="sidebar">
                 <div className="sidebar-content">
                     <div className="sidebar-header">
@@ -81,11 +80,6 @@ export default function Home() {
                     <section key="services" id="services" className="section">
                         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
                             <h2 className="section-title">Naše Usluge</h2>
-                            <div className="services-grid">
-                                {services.map((service, index) => (
-                                    <Card theme={theme} name={service.name} key={index} />
-                                ))}
-                            </div>
                             <p className="section-description">Vaš put ka znanju počinje ovde.</p>
                             <br/>
                             <p className="section-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -96,12 +90,18 @@ export default function Home() {
                             <br/>
                             <p className="section-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
+                            <div className="services-grid">
+                                {services.map((service, index) => (
+                                    <Card theme={theme} name={service.name} key={index} />
+                                ))}
+                            </div>
                         </motion.div>
                     </section>
 
                     <section key="news" id="news" className="section">
                         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
                             <h2 className="section-title">Novosti</h2>
+                            <p className="section-description">Ovde možete pronaci najnovije informacije.</p>
                             <div className={`blog-grid ${theme}`}>
                                 {blogPosts.map((post, index) => (
                                     <div key={index} className={`blog-card ${theme}`}>
@@ -110,7 +110,6 @@ export default function Home() {
                                     </div>
                                 ))}
                             </div>
-                            <p className="section-description">Vaš put ka znanju počinje ovde.</p>
                             <br/>
                             <p className="section-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                             <br/>

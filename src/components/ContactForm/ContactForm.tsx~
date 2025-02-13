@@ -9,8 +9,8 @@ interface ContactFormProps {
 const ContactForm: React.FC<ContactFormProps> = ({ theme }) => {
     return (
         <div className={`contact-form-container ${theme}`}>
+            <h2 className="contact-info-title">Kontaktirajte nas</h2>
             <form className={`contact-form ${theme}`}>
-                <h2 className="contact-info-title">Kontaktirajte nas</h2>
                 <input type="text" placeholder="Vaše ime" className={`form-input ${theme}`} />
                 <input type="email" placeholder="Email adresa" className={`form-input ${theme}`} />
                 <textarea placeholder="Vaša poruka" rows={4} className={`form-textarea ${theme}`}></textarea>
