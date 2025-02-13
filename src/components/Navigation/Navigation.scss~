@@ -1,3 +1,7 @@
+.navigation-container {
+  margin-top: 20px;
+}
+
 .navigation {
   display: flex;
   flex-direction: column;
@@ -111,7 +115,7 @@
   }
   50% {
     opacity: 1;
-    transform: translateX(20%);
+    transform: translateX(30%);
   }
   100% {
     opacity: 1;

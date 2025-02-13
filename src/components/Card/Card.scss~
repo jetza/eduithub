@@ -105,4 +105,4 @@
 
 [data-theme='light'] .holographic-card:hover {
   box-shadow: 0 0 20px var(--highlight-color);
-}
+}}

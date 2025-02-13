@@ -187,7 +187,7 @@
 .social-links::before {
   content: "";
   position: absolute;
-  top: -30px; /* Move the glow effect slightly higher */
+  top: -20px; /* Move the glow effect slightly higher */
   left: -10px; /* Move the glow effect slightly to the left */
   right: -10px; /* Move the glow effect slightly to the right */
   bottom: -10px; /* Move the glow effect slightly to the bottom */

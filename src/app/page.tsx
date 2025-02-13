@@ -19,8 +19,8 @@ export default function Home() {
 
     useEffect(() => {
         if (typeof window !== "undefined") {
-            window.history.scrollRestoration = "manual"; // Onemogućava čuvanje scroll pozicije
-            window.scrollTo(0, 0); // Resetuje scroll na vrh
+            window.history.scrollRestoration = "manual";
+            window.scrollTo(0, 0);
         }
     }, []);
 
@@ -39,18 +39,22 @@ export default function Home() {
     };
 
     return (
-        <div className="layout-container">
-            <NavigationTop handleThemeChange={handleThemeChange} theme={theme}/>
+        <div className={`layout-container`} data-theme={theme}>
+            <NavigationTop handleThemeChange={handleThemeChange} theme={theme} />
             <motion.aside initial={{ x: -300 }} animate={{ x: isNavOpen ? 0 : -300 }} className="sidebar">
                 <div className="sidebar-content">
                     <div className="sidebar-header">
-                        {theme === 'dark' ? (
-                            <Image src="/logo-dark.png" alt="Logo" width={80} height={80} />
-                        ) : (
-                            <Image src="/logo-light.png" alt="Logo" width={80} height={80} />
-                        )}
+                        <div className="logo-container">
+                            <div className="square"></div>
+                            <div className="logo">
+                                {theme === 'dark' ? (
+                                    <Image src="/logo-dark.png" alt="Logo" width={80} height={80} />
+                                ) : (
+                                    <Image src="/logo-light.png" alt="Logo" width={80} height={80} />
+                                )}
+                            </div>
+                        </div>
                     </div>
-
                     <Navigation theme={theme} activeSection={activeSection} setActiveSection={setActiveSection} />
 
                     <div className="sidebar-footer">
@@ -71,7 +75,7 @@ export default function Home() {
                 <AnimatePresence mode="popLayout">
                     <section key="home" id="home" className="section">
                         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-                            <h1 className="section-title">Dobrodošli</h1>
+                            <h1 className="section-title">Learnium</h1>
                             <p className="section-description">Vaš put ka znanju počinje ovde.</p>
                             <br/>
                             <p className="section-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>

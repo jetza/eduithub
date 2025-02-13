@@ -33,7 +33,7 @@
 }
 
 [data-theme='dark'] .switch {
-  box-shadow: 0 0 30px var(--neon-blue-rgb); /* Blue glow in dark mode */
+  box-shadow: 5px 10px 25px var(--neon-blue-rgb); /* Blue glow in dark mode */
 }
 
 [data-theme='dark'] .switch:hover {

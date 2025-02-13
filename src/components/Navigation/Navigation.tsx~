@@ -66,10 +66,7 @@ const Navigation: (props: NavigationProps) => JSX.Element = ({ theme, activeSect
                             e.preventDefault();
                             scrollToSection(id);
                         }}
-                        style={{
-                            '--i': theme === 'dark' ? 'var(--highlight-color)' : 'var(--neon-blue-rgb)',
-                            '--j': theme === 'dark' ? 'var(--neon-blue-rgb)' : 'var(--highlight-color)'
-                        } as React.CSSProperties}
+                        style={{ '--i': theme === 'dark' ? 'var(--highlight-color)' : 'var(--neon-blue-rgb)', '--j': theme === 'dark' ? 'var(--neon-blue-rgb)' : 'var(--highlight-color)' } as React.CSSProperties}
                     >
                         <span className="icon"><Icon size={20} /></span>
                         <span className="title">{title}</span>

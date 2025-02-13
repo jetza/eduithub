@@ -20,7 +20,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ theme }) => {
                 <div className="phone-number">
                     <p>Br. Telefona: +123 456 789</p>
                 </div>
-                <div className="social-icons">
+                <div className={`social-icons ${theme}`}>
                     <FaFacebook />
                     <FaInstagram />
                     <FaTiktok />

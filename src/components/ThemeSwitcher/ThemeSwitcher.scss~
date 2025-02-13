@@ -1,0 +1,24 @@
+.theme-button {
+    padding: 0.75rem 1.5rem;
+    background: var(--highlight-color);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    box-shadow: 0 4px 6px rgba(102, 204, 255, 0.3); /* Box shadow for dark mode */
+}
+
+.theme-button:hover {
+    background: #896FBC;
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(102, 204, 255, 0.45); /* Enhanced box shadow on hover */
+}
+
+[data-theme='light'] .theme-button {
+    box-shadow: 0 4px 6px rgba(102, 204, 255, 0.6); /* Box shadow for light mode */
+}
+
+[data-theme='light'] .theme-button:hover {
+    box-shadow: 0 6px 8px rgba(102, 204, 255, 0.75); /* Enhanced box shadow on hover */
+}

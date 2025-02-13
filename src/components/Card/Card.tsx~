@@ -1,16 +1,17 @@
-import * as React from 'react';
+import './Card.scss';
+import {JSX} from "react";
 
 interface CardProps {
     theme: string;
     name: string;
-    text: string;
 }
 
-const Card: React.FC<CardProps> = ({ theme, name, text }) => {
+const Card: (props: CardProps) => JSX.Element = ({ theme, name }) => {
     return (
-        <div className={`card ${theme}`}>
-            <h3>{name}</h3>
-            <p>{text}</p>
+        <div className={`navigation-container ${theme}`} data-theme={theme}>
+            <div className="holographic-card">
+                <h2>{name}</h2>
+            </div>
         </div>
     );
 };

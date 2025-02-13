@@ -15,7 +15,6 @@
   --card-bacground-dark: #2a2a2a;
   --blog-card-border: #ddd;
   --neon-blue: #00C8FF;
-  --neon-blue-rgb: rgba(102, 204, 255, 0.3);
 }
 
 [data-theme='light'] {

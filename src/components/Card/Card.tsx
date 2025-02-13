@@ -8,7 +8,7 @@ interface CardProps {
 
 const Card: (props: CardProps) => JSX.Element = ({ theme, name }) => {
     return (
-        <div className={`navigation-container ${theme}`} data-theme={theme}>
+        <div className={`card-container ${theme}`} data-theme={theme}>
             <div className="holographic-card">
                 <h2>{name}</h2>
             </div>

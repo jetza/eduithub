@@ -41,9 +41,39 @@
 }
 
 .social-icons {
-  display: flex;
-  gap: 3rem;
-  font-size: 2rem;
+  display: none; /* Hide by default */
+
+  @media (max-width: 768px) {
+    display: flex; /* Show on mobile when side menu is not visible */
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    gap: 3rem;
+    font-size: 2rem;
+    position: relative; /* Required for pseudo-elements */
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -30px; /* Move the glow effect slightly higher */
+      left: -10px; /* Move the glow effect slightly to the left */
+      right: -10px; /* Move the glow effect slightly to the right */
+      bottom: -10px; /* Move the glow effect slightly to the bottom */
+      border-radius: 20%;
+      background: linear-gradient(45deg, var(--i), var(--j));
+      filter: blur(20px); /* Increase the blur to make the glow effect wider */
+      z-index: -1;
+      opacity: 1; /* Ensure the glow effect is always visible */
+      transition: opacity 0.5s;
+    }
+
+    [data-theme='dark'] &::before {
+      background: rgba(102, 204, 255, 0.3); /* Dark mode glow color */
+    }
+
+    [data-theme='light'] &::before {
+      background: rgba(155, 89, 255, 0.5); /* Light mode glow color */
+    }
+  }
 }
 
 .phone-number {
@@ -102,7 +132,7 @@
 
 .form-button.light {
   background: var(--text-color);
-  color: var(--dark-gray);
+  color: var(--grid-white);
 }
 
 .form-button.light:hover {

@@ -1,3 +1,10 @@
+.navigation-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ensure the container takes the full height of the viewport */
+}
+
 .navigation {
   display: flex;
   flex-direction: column;
