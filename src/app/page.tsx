@@ -3,7 +3,6 @@
 import {useEffect, useState} from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import "./page.scss";
-import ThemeSwitcher from "@/components/ThemeSwitcher/ThemeSwitcher";
 import { socialLinks, services, blogPosts } from './data';
 import Footer from "@/components/Footer/Footer";
 import ContactForm from "@/components/ContactForm/ContactForm";
@@ -12,10 +11,19 @@ import Image from "next/image";
 import Card from "@/components/Card/Card";
 import NavigationTop from "@/components/NavigationTop/NavigationTop";
 
+
 export default function Home() {
     const [activeSection, setActiveSection] = useState('home');
     const [isNavOpen] = useState(true);
     const [theme, setTheme] = useState<string | null>(null);
+
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            window.history.scrollRestoration = "manual"; // Onemogućava čuvanje scroll pozicije
+            window.scrollTo(0, 0); // Resetuje scroll na vrh
+        }
+    }, []);
+
 
     useEffect(() => {
         const savedTheme = localStorage.getItem('theme') || 'dark';
@@ -32,7 +40,7 @@ export default function Home() {
 
     return (
         <div className="layout-container">
-            <NavigationTop handleThemeChange={handleThemeChange}/>
+            <NavigationTop handleThemeChange={handleThemeChange} theme={theme}/>
             <motion.aside initial={{ x: -300 }} animate={{ x: isNavOpen ? 0 : -300 }} className="sidebar">
                 <div className="sidebar-content">
                     <div className="sidebar-header">

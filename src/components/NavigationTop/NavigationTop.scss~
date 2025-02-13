@@ -11,12 +11,8 @@
   z-index: 1000;
 
   &.light {
-    background: transparent; /* Changed from white to transparent */
+    background: white; /* Changed from white to transparent */
     color: black;
-
-    @media (min-width: 768px) {
-      background: transparent; /* Set background to transparent on larger screens */
-    }
   }
 }
 
