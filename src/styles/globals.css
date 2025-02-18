@@ -16,6 +16,8 @@
   --blog-card-border: #ddd;
   --neon-blue: #00C8FF;
   --neon-blue-rgb: rgba(102, 204, 255, 0.3);
+
+  --font-montserrat: 'Montserrat', sans-serif;
 }
 
 [data-theme='light'] {
@@ -37,7 +39,7 @@ body {
 body {
   color: var(--text-color);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-montserrat), sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
