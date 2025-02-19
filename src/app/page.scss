@@ -338,7 +338,6 @@
 
 .grid {
   background-attachment: fixed;
-  background-image: url("../../public/grid.svg");
   background-position: top left;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -356,4 +355,11 @@
   justify-content: center;
   min-height: 100vh;
   position: relative;
+
+  .light & {
+    background-image: url("../../public/grid-light.svg");
+  }
+  .dark & {
+    background-image: url("../../public/grid-dark.svg");
+  }
 }
