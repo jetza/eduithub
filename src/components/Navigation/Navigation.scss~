@@ -1,5 +1,9 @@
 .navigation-container {
-  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .navigation {
@@ -15,7 +19,8 @@
   list-style: none;
   width: 60px;
   height: 60px;
-  background: linear-gradient(45deg, var(--j), var(--i));
+  //background: linear-gradient(45deg, var(--j), var(--i));
+  background: #5C038C;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   border-radius: 60px;
   cursor: pointer;
@@ -32,7 +37,8 @@
   position: absolute;
   inset: 0;
   border-radius: 60px;
-  background: linear-gradient(45deg, var(--i), var(--j));
+  //background: linear-gradient(45deg, var(--i), var(--j));
+  background: #5C038C;
   opacity: 0;
   transition: 0.5s;
 }
@@ -44,7 +50,8 @@
   width: 100%;
   height: 100%;
   border-radius: 60px;
-  background: linear-gradient(45deg, var(--i), var(--j));
+  //background: linear-gradient(45deg, var(--i), var(--j));
+  background: #5C038C;
   transition: 0.5s;
   filter: blur(15px);
   z-index: -1;
@@ -96,7 +103,7 @@
 }
 
 .navigation li.active {
-  background: linear-gradient(45deg, var(--i), var(--j));
+  //background: linear-gradient(45deg, var(--i), var(--j));
   color: var(--background-light);
 }
 

@@ -36,12 +36,12 @@ const ContactModal: React.FC<ContactModalProps> = ({ onClose, theme }) => {
                     <h2>Lrnium</h2>
                 </div>
                 <form className="contact-form">
-                    <input type="text" placeholder="Name" required />
+                    <input type="text" placeholder="Ime i prezime" required />
                     <input type="email" placeholder="Email" required />
-                    <textarea placeholder="Message" required></textarea>
-                    <button type="submit">Send Message</button>
+                    <textarea placeholder="Poruka" required></textarea>
+                    <button type="submit">Pošalji poruku</button>
                 </form>
-                <p className="modal-footer-text">We will get back to you as soon as possible.</p>
+                <p className="modal-footer-text">Kontaktiraćemo vas u što kraćem roku.</p>
             </div>
         </div>
     );

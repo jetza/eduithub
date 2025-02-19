@@ -17,7 +17,7 @@ const Footer: React.FC<FooterProps> = ({ theme }) => {
     return (
         <footer className={`footer-bar ${theme}`}>
             <span>
-                <FaCopyright /> 2025 Lrnium. All rights reserved.</span>
+                <FaCopyright /> 2025 Lrnium. Sva prava rezervisana.</span>
             <button className="contact-icon" onClick={toggleModal}>
                 <FaRegCommentAlt size={40} />
             </button>

@@ -17,8 +17,11 @@ const ContactForm: React.FC<ContactFormProps> = ({ theme }) => {
                 <button type="submit" className={`form-button ${theme}`}>Pošalji poruku</button>
             </form>
             <div className={`contact-info ${theme}`}>
-                <div className="phone-number">
-                    <p>Br. Telefona: +123 456 789</p>
+                <div className="contact">
+                    <p>📩 Imate pitanje ili sugestiju? Pošaljite nam poruku!</p>
+                        <p>Email: lrnium.info@gmail.com</p>
+                        <p>Br. Telefona: +123 456 789</p>
+                        <p>📬 Prijavite se na naš newsletter i budite u toku sa najnovijim člancima i edukativnim resursima!</p>
                 </div>
                 <div className={`social-icons ${theme}`}>
                     <FaFacebook />
