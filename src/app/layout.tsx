@@ -25,7 +25,7 @@ export const metadata: {
         url: string
     }
 } = {
-    title: "Lrnium - Osnaživanje Obrazovanja",
+    title: "Lrnium - Znanje za sve generacije",
     description: "Pridružite se Lrniumu i proširite svoje znanje kroz visokokvalitetne edukativne sadržaje.",
     keywords: "kurs, kursevi, matematika, instrukcije, instrukcije iz matematike, instrukcije iz informatike, instrukcije iz programiranja, programiranje, obrazovanje, učenje, matematika razred, zadaci rješenja, zadaci iz matematike, izrada web stranica, izrada web stranica, web dizajn, web programiranje, web development, web developer, web dizajner, web stranica, web sajt, web sajtovi, web aplikacije, web aplikacija, web aplikacije cijena, web aplikacija cijena, web aplikacija izrada",
     author: "Jelena Miodragovic",

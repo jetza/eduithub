@@ -335,3 +335,25 @@
   background: rgba(155, 89, 255, 0.5);
   filter: blur(20px);
 }
+
+.grid {
+  background-attachment: fixed;
+  background-image: url("../../public/grid.svg");
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-flex-direction: column;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  min-height: 100vh;
+  position: relative;
+}

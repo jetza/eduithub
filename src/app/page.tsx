@@ -71,7 +71,7 @@ export default function Home() {
                 </div>
             </motion.aside>
 
-            <main className={`main-content ${theme}`}>
+            <main className={`main-content ${theme} grid`}>
                 <AnimatePresence mode="popLayout">
                     <section key="home" id="home" className="section">
                         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
