@@ -23,7 +23,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ theme }) => {
                         <p>Br. Telefona: +123 456 789</p>
                         <p>📬 Prijavite se na naš newsletter i budite u toku sa najnovijim člancima i edukativnim resursima!</p>
                 </div>
-                <div className={`social-icons ${theme}`}>
+                <div className={`social-icons ${theme} `}>
                     <FaFacebook />
                     <FaInstagram />
                     <FaTiktok />

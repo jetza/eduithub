@@ -3,7 +3,6 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.3);
 }
 
 .navigation {
@@ -12,6 +11,14 @@
   align-items: center;
   position: relative;
   gap: 35px;
+}
+
+[data-theme='dark'] .navigation li {
+  box-shadow: 0 0 15px var(--neon-blue-rgb);
+}
+
+[data-theme='light'] .navigation li {
+  box-shadow: 0 0 15px var(--text-color);
 }
 
 .navigation li {

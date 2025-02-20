@@ -13,6 +13,14 @@
   gap: 35px;
 }
 
+[data-theme='dark'] .navigation li {
+  box-shadow: 0 5px 15px var(--neon-blue-rgb);
+}
+
+[data-theme='light'] .navigation li {
+  box-shadow: 0 5px 15px var(--text-color);
+}
+
 .navigation li {
   position: relative;
   list-style: none;

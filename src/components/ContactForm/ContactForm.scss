@@ -41,37 +41,37 @@
 }
 
 .social-icons {
-  display: none; /* Hide by default */
+  display: none;
 
   @media (max-width: 768px) {
-    display: flex; /* Show on mobile when side menu is not visible */
-    align-items: center; /* Center horizontally */
-    justify-content: center; /* Center vertically */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 3rem;
     font-size: 2rem;
-    position: relative; /* Required for pseudo-elements */
+    position: relative;
 
     &::before {
       content: "";
       position: absolute;
-      top: -10px; /* Move the glow effect slightly higher */
-      left: -5px; /* Move the glow effect slightly to the left */
-      right: -5px; /* Move the glow effect slightly to the right */
-      bottom: -5px; /* Move the glow effect slightly to the bottom */
-      border-radius: 10%; /* Reduce the border radius */
+      top: -10px;
+      left: -5px;
+      right: -5px;
+      bottom: -5px;
+      border-radius: 10%;
       background: linear-gradient(45deg, var(--i), var(--j));
-      filter: blur(10px); /* Reduce the blur to make the glow effect smaller */
+      filter: blur(10px);
       z-index: -1;
-      opacity: 0.7; /* Reduce the opacity to make the glow effect less intense */
+      opacity: 0.7;
       transition: opacity 0.5s;
     }
 
     [data-theme='dark'] &::before {
-      background: rgba(102, 204, 255, 0.2); /* Dark mode glow color */
+      background: rgba(102, 204, 255, 0.2);
     }
 
     [data-theme='light'] &::before {
-      background: rgba(155, 89, 255, 0.3); /* Light mode glow color */
+      background: rgba(155, 89, 255, 0.3);
     }
   }
 }

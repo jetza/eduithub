@@ -22,7 +22,7 @@ export const socialLinks = [
     { icon: FaFacebook, href: '#', label: 'Facebook' },
     { icon: FaInstagram, href: '#', label: 'Instagram' },
     { icon: FaTiktok, href: '#', label: 'Tiktok' },
-    { icon: FaLinkedin, href: '#', label: 'LinkedIn' },
+    { icon: FaLinkedin, href: 'https://www.linkedin.com/company/lrnium', label: 'LinkedIn' },
     { icon: FaViber, href: '#', label: 'Viber' },
 ];
 
