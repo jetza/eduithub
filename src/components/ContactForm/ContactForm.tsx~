@@ -1,15 +1,7 @@
 import React from 'react';
 import './ContactForm.scss';
-import {
-    FaFacebook,
-    FaInstagram,
-    FaTiktok,
-    FaViber,
-    FaEnvelope,
-    FaPhone,
-    FaMapPin,
-    FaLinkedin
-} from 'react-icons/fa';
+import {FaFacebook, FaInstagram, FaYoutube, FaTiktok, FaViber, FaEnvelope, FaPhone, FaMapPin} from 'react-icons/fa';
+import SocialLinks from "@/components/SocialLinks/SocialLinks";
 
 interface ContactFormProps {
     theme: string;
@@ -32,13 +24,14 @@ const ContactForm: React.FC<ContactFormProps> = ({ theme }) => {
                 <textarea placeholder="Vaša poruka" rows={4} className={`form-textarea ${theme}`}></textarea>
                 <button type="submit" className={`form-button ${theme}`}>Pošalji poruku</button>
             </form>
-            <div className={`social-icons ${theme} `}>
-                <FaFacebook />
-                <FaInstagram />
-                <FaTiktok />
-                <FaLinkedin />
-                <FaViber />
-            </div>
+            <SocialLinks />
+            {/*<div className={`social-icons ${theme} `}>*/}
+            {/*    <FaFacebook />*/}
+            {/*    <FaInstagram />*/}
+            {/*    <FaTiktok />*/}
+            {/*    <FaYoutube />*/}
+            {/*    <FaViber />*/}
+            {/*</div>*/}
         </div>
     );
 };

@@ -9,6 +9,11 @@
   width: 100%;
   transition: background-color 0.3s ease;
 
+  span {
+    display: flex;
+    align-items: center;
+  }
+
   .contact-icon {
     position: absolute;
     right: 20px;
@@ -24,4 +29,8 @@
       transform: scale(1.2);
     }
   }
+}
+
+.footer-bar span svg {
+  margin-right: 8px; /* Adjust the value as needed */
 }

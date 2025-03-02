@@ -2,6 +2,9 @@ import './NavigationTop.scss';
 import { JSX, useState } from "react";
 import ThemeSwitcher from "@/components/ThemeSwitcher/ThemeSwitcher";
 import { sections } from "@/app/data";
+import SocialLinks from "@/components/SocialLinks/SocialLinks";
+import {FaBarsStaggered, FaXmark} from "react-icons/fa6";
+import {FaAlignLeft} from "react-icons/fa";
 
 interface NavigationTopProps {
     handleThemeChange: (theme: string) => void;
@@ -26,9 +29,10 @@ const NavigationTop: (props: NavigationTopProps) => JSX.Element = ({ handleTheme
     };
 
     return (
-        <div className={`transparent-bar top ${theme === 'light' ? 'light' : ''}`}>
+        <div className={`transparent-bar top ${isMenuOpen ? 'menu-open' : ''} ${theme === 'light' ? 'light' : ''}`}>
             <div className="menu-toggle" onClick={toggleMenu}>
-                {isMenuOpen ? "✖" : "☰"}
+                {isMenuOpen ? <FaXmark/> : <FaAlignLeft />}
+                {/*{isMenuOpen ? "✖" : "☰"}*/}
             </div>
             <ThemeSwitcher onThemeChange={handleThemeChange} />
 
@@ -36,11 +40,12 @@ const NavigationTop: (props: NavigationTopProps) => JSX.Element = ({ handleTheme
                 <nav className={`mobile-nav ${theme === 'light' ? 'light' : ''}`}>
                     <ul>
                         {sections.map(section => (
-                            <li key={section.id} onClick={() => handleNavClick(section.id)}>
+                            <li key={section.id} className={`${theme === 'light' ? 'light' : 'dark'}`} onClick={() => handleNavClick(section.id)}>
                                 {section.title}
                             </li>
                         ))}
                     </ul>
+                    <SocialLinks />
                 </nav>
             )}
         </div>

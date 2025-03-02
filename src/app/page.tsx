@@ -3,13 +3,14 @@
 import {useEffect, useState} from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import "./page.scss";
-import { socialLinks, services, blogPosts } from './data';
+import { services, blogPosts } from './data';
 import Footer from "@/components/Footer/Footer";
 import ContactForm from "@/components/ContactForm/ContactForm";
 import Navigation from "@/components/Navigation/Navigation";
 import Image from "next/image";
 import Card from "@/components/Card/Card";
 import NavigationTop from "@/components/NavigationTop/NavigationTop";
+import SocialLinks from "@/components/SocialLinks/SocialLinks";
 
 
 export default function Home() {
@@ -45,7 +46,6 @@ export default function Home() {
                 <div className="sidebar-content">
                     <div className="sidebar-header">
                         <div className="logo-container">
-                            <div className="square"></div>
                             <div className="logo">
                                 {theme === 'dark' ? (
                                     <Image src="/logo-dark.png" alt="Logo" width={80} height={80} />
@@ -58,15 +58,7 @@ export default function Home() {
                     <Navigation theme={theme} activeSection={activeSection} setActiveSection={setActiveSection} />
 
                     <div className="sidebar-footer">
-                        <ul className="social-links">
-                            {socialLinks.map(({ icon: Icon, href, label }, index) => (
-                                <li key={index}>
-                                    <a href={href} className="social-icon" aria-label={label}>
-                                        <Icon size={20} className="icon" />
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
+                        <SocialLinks />
                     </div>
                 </div>
             </motion.aside>
@@ -76,7 +68,6 @@ export default function Home() {
                     <section key="home" id="home" className="section">
                         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
                             <h1 className="section-title">Learnium</h1>
-                            <h1 className="section-title">Dobrodošli na naš edukativni sajt!</h1>
                             <p className="section-description">Naša misija je da svim učenicima, bilo da su deca koja tek ulaze u svet programiranja ili odrasli početnici, omogućimo da nađu lako razumljive i zabavne načine za učenje. Pružamo sve potrebne alate i resurse kako biste savladali osnovne i napredne veštine iz matematike i web developmenta. Kroz interaktivne časove, kreativne projekte i individualizovane pristupe, učenici će moći da savladaju gradivo na način koji je prilagođen njihovom uzrastu i tempu.</p>
                             <p className="section-description">Naša ponuda uključuje online i uživo nastavu, pružajući vam fleksibilnost da birate način učenja koji vam najviše odgovara. Časovi su dizajnirani tako da podstiču radoznalost, motivaciju i ljubav prema učenju, a istovremeno omogućavaju razvoj praktičnih veština koje mogu biti korisne za buduće školovanje ili profesionalni razvoj.</p>
                             <p className="section-description">Učenici će kroz praktične zadatke i projekte učiti o osnovama web developmenta, stvarajući svoje prve web stranice koristeći HTML, CSS i JavaScript, kao i primenjivati tehnike za kreiranje funkcionalnih i modernih sajtova. Za decu, posebnu pažnju posvećujemo tome da nastava bude zabavna i angažujuća, kroz projekte i aktivnosti koje ih motivišu da uče kroz igru.</p>
@@ -122,12 +113,6 @@ export default function Home() {
                             </div>
                             <br/>
                             <p className="section-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            <br/>
-                            <p className="section-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            <br/>
-                            <p className="section-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            <br/>
-                            <p className="section-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
                         </motion.div>
                     </section>
@@ -135,7 +120,6 @@ export default function Home() {
                     <section key="about" id="about" className="section">
                         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
                             <h2 className="section-title">O Nama</h2>
-                            <p>Mi smo tim posvećenih stručnjaka sa strašću za obrazovanje i razvoj.</p>
                         </motion.div>
                         <p className="section-description">Mi smo tim posvećenih edukatora i profesionalaca sa jedinstvenim ciljem – da decu, početnike i sve zainteresovane za učenje usmerimo ka uspehu u <strong>matematici</strong> i <strong>web developmentu</strong>. Naša strast prema obrazovanju, zajedno sa ljubavlju prema tehnologiji, omogućava nam da kreiramo sadržaj koji je zabavan, edukativan i lako primenljiv.</p>
 
